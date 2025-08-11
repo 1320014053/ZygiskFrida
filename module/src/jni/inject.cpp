@@ -127,6 +127,7 @@ bool check_and_inject(std::string const &app_name) {
 
     std::thread inject_thread(inject_libs, target_config);
     inject_thread.join();
+    std::this_thread::sleep_for(std::chrono::milliseconds(4000));
 
     return true;
 }
